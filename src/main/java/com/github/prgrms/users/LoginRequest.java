@@ -13,7 +13,7 @@ public class LoginRequest {
   @NotBlank(message = "credentials must be provided")
   private String credentials;
 
-  protected LoginRequest() {/*empty*/}
+  public LoginRequest() {/*empty*/}
 
   public LoginRequest(String principal, String credentials) {
     this.principal = principal;

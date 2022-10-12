@@ -30,8 +30,7 @@ public class ReviewService {
         String content = request.getContent();
 
         //주문 존재 여부 확인
-        Order findOrder = orderRepository.findById(orderSeq)
-                .orElseThrow(() -> new IllegalArgumentException("OrderId[" + orderSeq + "] is Not exist "));
+        Order findOrder = orderRepository.findById(orderSeq).get();
 
         //리뷰 본문 존재여부 확인
         checkArgument(isNotEmpty(content), "name must be provided");

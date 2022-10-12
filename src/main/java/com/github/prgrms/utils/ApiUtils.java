@@ -11,6 +11,7 @@ public class ApiUtils {
   }
 
   public static ApiResult<?> error(Throwable throwable, HttpStatus status) {
+
     return new ApiResult<>(false, null, new ApiError(throwable, status));
   }
 

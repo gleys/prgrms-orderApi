@@ -15,6 +15,8 @@ import org.springframework.web.servlet.NoHandlerFoundException;
 
 import javax.validation.ConstraintViolationException;
 
+import java.util.NoSuchElementException;
+
 import static com.github.prgrms.utils.ApiUtils.error;
 
 @ControllerAdvice
@@ -51,6 +53,7 @@ public class GeneralExceptionHandler {
     IllegalArgumentException.class,
     IllegalStateException.class,
     ConstraintViolationException.class,
+    NoSuchElementException.class,
     MethodArgumentNotValidException.class
   })
   public ResponseEntity<?> handleBadRequestException(Exception e) {

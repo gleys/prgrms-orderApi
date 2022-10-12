@@ -16,8 +16,11 @@ public class SimplePageRequest implements Pageable {
   }
 
   public SimplePageRequest(long offset, int size) {
+
     checkArgument(offset >= 0, "offset must be greater or equals to zero");
+    checkArgument(offset <= Long.MAX_VALUE, "offset must be little than Long.MAX_VALUE");
     checkArgument(size >= 1, "size must be greater than zero");
+    checkArgument(size <= 5, "size must be little than five");
 
     this.offset = offset;
     this.size = size;

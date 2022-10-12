@@ -13,4 +13,15 @@ public class NumberUtil extends NumberUtils{
 
         return r;
     }
+
+    public static boolean isSmall(int value, int max){
+        boolean r = false;
+
+        if(value < max){
+            r = true;
+        }
+
+        return r;
+    }
+
 }

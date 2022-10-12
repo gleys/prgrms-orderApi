@@ -1,7 +1,10 @@
 package com.github.prgrms.orders;
 
+import lombok.Data;
+
 import java.time.LocalDateTime;
 
+@Data
 public class Order {
 
   private final Long seq;
@@ -51,6 +54,10 @@ public class Order {
       before.getRejectedAt(),
       before.getCreateAt()
     );
+  }
+
+  public void changeOrderState(OrderState state) {
+    this.state = state;
   }
 
   public Long getSeq() {
